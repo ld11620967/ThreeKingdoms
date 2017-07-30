@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         rv.layoutManager = layoutManager
         var catalogadaapter = ArticleAdapter(catalogList)
+//        rv.addItemDecoration(CalalogItemDecoration(this, LinearLayoutManager.HORIZONTAL))
+//        rv.addItemDecoration(CalalogItemDecoration(
+//                this, LinearLayoutManager.VERTICAL, R.drawable.divider_mileage))
+        rv.addItemDecoration(CalalogItemDecoration(
+                this, LinearLayoutManager.HORIZONTAL, 2, resources.getColor(R.color.colorAccent)))
+
         rv.adapter = catalogadaapter
         catalogadaapter.setOnItemClickListener(object : ArticleAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
